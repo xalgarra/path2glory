@@ -119,12 +119,20 @@ export default function HeroSheet({ campaignId, heroId }: HeroSheetProps) {
   return (
     <PageContainer>
       <div className="pt-6 space-y-6">
-        <button
-          onClick={() => navigate({ name: 'campaign-detail', campaignId })}
-          className="text-sky-400 hover:text-sky-300 text-sm min-h-[44px]"
-        >
-          ‹ {campaign.name}
-        </button>
+        <div className="flex items-center justify-between print-hidden">
+          <button
+            onClick={() => navigate({ name: 'campaign-detail', campaignId })}
+            className="text-sky-400 hover:text-sky-300 text-sm min-h-[44px]"
+          >
+            ‹ {campaign.name}
+          </button>
+          <button
+            onClick={() => window.print()}
+            className="text-slate-400 hover:text-slate-300 text-sm min-h-[44px] pl-4"
+          >
+            Imprimir / PDF
+          </button>
+        </div>
 
         {hasVersionDrift && (
           <div className="flex items-center gap-2 p-3 rounded-lg bg-amber-950 border border-amber-800">
