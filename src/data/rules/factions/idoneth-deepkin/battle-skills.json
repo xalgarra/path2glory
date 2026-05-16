@@ -14,7 +14,10 @@
             { "type": "excludesSkillIds", "ids": ["idoneth-cefalopodo-abisal", "idoneth-familiar-bestia-marina"] }
           ],
           "needsManualReview": false,
-          "destinyCost": 1
+          "destinyCost": 1,
+          "effects": [
+            { "type": "addWeapon", "id": "banco-peces-cefiro", "name": "Banco de Peces Céfiro", "atk": 8, "hit": "4+", "wnd": "5+", "rnd": 0, "dmg": 1, "melee": false, "rangeInches": 10, "tags": ["A bocajarro", "Acompañante"] }
+          ]
         },
         {
           "id": "idoneth-cefalopodo-abisal",
@@ -23,14 +26,14 @@
           "ruleText": "Solo Infantería. Añade dos habilidades: (Pasiva) CEFALÓPODO ABISAL: es una ficha; si es retirado, no puedes usar Defensor pelágico. (Una vez por batalla, cualquier fase de combate) DEFENSOR PELÁGICO: elige uno — tira 8D6 contra unidad enemiga trabada, 1 daño mortal por cada 5+; o esta unidad tiene Salvaguarda (5+) el resto del turno. Tras resolverlo, retira la ficha.",
           "tags": ["acompañante", "defensa", "infanteria"],
           "restrictions": [
-            {
-              "type": "custom",
-              "description": "Solo disponible para héroes con la clave Infantería."
-            },
+            { "type": "custom", "description": "Solo disponible para héroes con la clave Infantería." },
             { "type": "excludesSkillIds", "ids": ["idoneth-banco-de-peces-cefiro", "idoneth-familiar-bestia-marina"] }
           ],
           "needsManualReview": true,
-          "destinyCost": 2
+          "destinyCost": 2,
+          "effects": [
+            { "type": "addAbility", "name": "Cefalópodo Abisal / Defensor Pelágico" }
+          ]
         },
         {
           "id": "idoneth-familiar-bestia-marina",
@@ -39,14 +42,14 @@
           "ruleText": "Solo Infantería. Añade dos habilidades: (Pasiva) FAMILIAR BESTIA MARINA: es una ficha; si es retirado, no puedes usar Ayuda desde las profundidades. (Pasiva) AYUDA DESDE LAS PROFUNDIDADES: repite 1 tirada para impactar, para herir, de salvación, de Salvaguarda, de lanzamiento, o de disipar. Después, retira la ficha.",
           "tags": ["acompañante", "apoyo", "infanteria"],
           "restrictions": [
-            {
-              "type": "custom",
-              "description": "Solo disponible para héroes con la clave Infantería."
-            },
+            { "type": "custom", "description": "Solo disponible para héroes con la clave Infantería." },
             { "type": "excludesSkillIds", "ids": ["idoneth-banco-de-peces-cefiro", "idoneth-cefalopodo-abisal"] }
           ],
           "needsManualReview": true,
-          "destinyCost": 2
+          "destinyCost": 2,
+          "effects": [
+            { "type": "addAbility", "name": "Familiar Bestia Marina / Ayuda desde las Profundidades" }
+          ]
         }
       ]
     },
@@ -61,13 +64,18 @@
           "ruleText": "Añade el arma de combate: Colmillos de corcel marino — Atq 4, Imp 4+, Her 3+, Per 1, Dañ 2. Clave: Acompañante. Cambia: Movimiento a 12\", Salud a 7, Salvación a 4+. Reemplaza la clave Infantería por Caballería.",
           "tags": ["montura", "caballeria"],
           "restrictions": [
-            {
-              "type": "excludesSkillIds",
-              "ids": ["idoneth-mount-alopex", "idoneth-mount-poderosa-bestia-marina"]
-            }
+            { "type": "excludesSkillIds", "ids": ["idoneth-mount-alopex", "idoneth-mount-poderosa-bestia-marina"] }
           ],
           "needsManualReview": false,
-          "destinyCost": 5
+          "destinyCost": 5,
+          "effects": [
+            { "type": "setMov",    "value": 12 },
+            { "type": "setHealth", "value": 7  },
+            { "type": "setSave",   "value": "4+" },
+            { "type": "addWeapon", "id": "colmillos-corcel", "name": "Colmillos de Corcel Marino", "atk": 4, "hit": "4+", "wnd": "3+", "rnd": 1, "dmg": 2, "melee": true, "tags": ["Acompañante"] },
+            { "type": "addKeyword",    "value": "Caballería" },
+            { "type": "removeKeyword", "value": "Infantería" }
+          ]
         },
         {
           "id": "idoneth-mount-alopex",
@@ -76,13 +84,19 @@
           "ruleText": "Añade el arma de combate: Mordedura feroz de Alopex — Atq 3, Imp 4+, Her 2+, Per 2, Dañ 2. Anti Monstruo (+1 Perforar), Acompañante. Pasiva — DEPREDADORES SEDIENTOS DE SANGRE: Suma 1 al atributo Ataques de la Mordedura feroz de Alopex mientras esté a 6\" o menos de una unidad enemiga dañada o a la que le hayan matado miniaturas en este turno. Cambia: Movimiento a 12\", Salud a 10, Salvación a 4+. Reemplaza la clave Infantería por Caballería.",
           "tags": ["montura", "caballeria"],
           "restrictions": [
-            {
-              "type": "excludesSkillIds",
-              "ids": ["idoneth-mount-corcel-marino", "idoneth-mount-poderosa-bestia-marina"]
-            }
+            { "type": "excludesSkillIds", "ids": ["idoneth-mount-corcel-marino", "idoneth-mount-poderosa-bestia-marina"] }
           ],
           "needsManualReview": false,
-          "destinyCost": 8
+          "destinyCost": 8,
+          "effects": [
+            { "type": "setMov",    "value": 12 },
+            { "type": "setHealth", "value": 10 },
+            { "type": "setSave",   "value": "4+" },
+            { "type": "addWeapon", "id": "mordedura-alopex", "name": "Mordedura Feroz de Alopex", "atk": 3, "hit": "4+", "wnd": "2+", "rnd": 2, "dmg": 2, "melee": true, "tags": ["Anti-Monstruo (+1 Perforar)", "Acompañante"] },
+            { "type": "addAbility",    "name": "Depredadores Sedientos de Sangre" },
+            { "type": "addKeyword",    "value": "Caballería" },
+            { "type": "removeKeyword", "value": "Infantería" }
+          ]
         },
         {
           "id": "idoneth-mount-poderosa-bestia-marina",
@@ -91,13 +105,21 @@
           "ruleText": "Añade el arma de combate: Mandíbulas de poderosa bestia marina — Atq 6, Imp 4+, Her 2+, Per 2, Dañ 3. Acompañante. Pasiva — DAÑADO EN BATALLA: Mientras esta unidad tenga 10 o más daños, el atributo Ataques de sus Mandíbulas de poderosa bestia marina es 3. Cambia: Movimiento a 10\", Salud a 16, Salvación a 3+, Control a 5. Reemplaza la clave Infantería por Monstruo, Volar.",
           "tags": ["montura", "monstruo", "volar"],
           "restrictions": [
-            {
-              "type": "excludesSkillIds",
-              "ids": ["idoneth-mount-corcel-marino", "idoneth-mount-alopex"]
-            }
+            { "type": "excludesSkillIds", "ids": ["idoneth-mount-corcel-marino", "idoneth-mount-alopex"] }
           ],
           "needsManualReview": false,
-          "destinyCost": 25
+          "destinyCost": 25,
+          "effects": [
+            { "type": "setMov",     "value": 10 },
+            { "type": "setHealth",  "value": 16 },
+            { "type": "setSave",    "value": "3+" },
+            { "type": "setControl", "value": 5  },
+            { "type": "addWeapon",  "id": "mandibulas-bestia", "name": "Mandíbulas de Poderosa Bestia Marina", "atk": 6, "hit": "4+", "wnd": "2+", "rnd": 2, "dmg": 3, "melee": true, "tags": ["Acompañante"] },
+            { "type": "addAbility",    "name": "Dañado en Batalla" },
+            { "type": "addKeyword",    "value": "Monstruo" },
+            { "type": "addKeyword",    "value": "Volar" },
+            { "type": "removeKeyword", "value": "Infantería" }
+          ]
         }
       ]
     },
@@ -113,13 +135,13 @@
           "ruleText": "Rule text or curated summary entered by the user.",
           "tags": ["mejora-montura"],
           "restrictions": [
-            {
-              "type": "custom",
-              "description": "Solo disponible si el héroe tiene una montura de guerra."
-            }
+            { "type": "custom", "description": "Solo disponible si el héroe tiene una montura de guerra." }
           ],
           "needsManualReview": false,
-          "destinyCost": 2
+          "destinyCost": 2,
+          "effects": [
+            { "type": "addHealth", "value": 1 }
+          ]
         },
         {
           "id": "idoneth-mount-impr-atacante-raudo",
@@ -128,13 +150,13 @@
           "ruleText": "Rule text or curated summary entered by the user.",
           "tags": ["mejora-montura", "caballeria", "movimiento"],
           "restrictions": [
-            {
-              "type": "custom",
-              "description": "Solo Caballería. Solo disponible si el héroe tiene una montura de guerra."
-            }
+            { "type": "custom", "description": "Solo Caballería. Solo disponible si el héroe tiene una montura de guerra." }
           ],
           "needsManualReview": true,
-          "destinyCost": 2
+          "destinyCost": 2,
+          "effects": [
+            { "type": "addMov", "value": 2 }
+          ]
         },
         {
           "id": "idoneth-mount-impr-descarga-biovoltaica",
@@ -143,13 +165,13 @@
           "ruleText": "PODEROSA DESCARGA BIOVOLTAICA: El mar aetérico se oscurece justo antes de que esta criatura descargue un enorme rayo de energía sobre las líneas enemigas.",
           "tags": ["mejora-montura", "caballeria", "daño-mortal"],
           "restrictions": [
-            {
-              "type": "custom",
-              "description": "Solo Caballería. Solo disponible si el héroe tiene una montura de guerra."
-            }
+            { "type": "custom", "description": "Solo Caballería. Solo disponible si el héroe tiene una montura de guerra." }
           ],
           "needsManualReview": true,
-          "destinyCost": 5
+          "destinyCost": 5,
+          "effects": [
+            { "type": "addAbility", "name": "Poderosa Descarga Biovoltaica" }
+          ]
         },
         {
           "id": "idoneth-mount-impr-tripulacion-montada",
@@ -158,13 +180,14 @@
           "ruleText": "Rule text or curated summary entered by the user.",
           "tags": ["mejora-montura", "monstruo", "armas"],
           "restrictions": [
-            {
-              "type": "custom",
-              "description": "Solo Monstruo. Solo disponible si el héroe tiene una montura de guerra."
-            }
+            { "type": "custom", "description": "Solo Monstruo. Solo disponible si el héroe tiene una montura de guerra." }
           ],
           "needsManualReview": true,
-          "destinyCost": 10
+          "destinyCost": 10,
+          "effects": [
+            { "type": "addWeapon", "id": "lanzaarpones", "name": "Lanzaarpones Valvaguda", "atk": 4, "hit": "3+", "wnd": "2+", "rnd": 1, "dmg": 3, "melee": false, "rangeInches": 18, "tags": ["Anti-Monstruo (+1 Perforar)"] },
+            { "type": "addWeapon", "id": "lanzas-tripulacion", "name": "Lanzas y Arpones de la Tripulación", "atk": 4, "hit": "3+", "wnd": "4+", "rnd": 1, "dmg": 1, "melee": true, "tags": [] }
+          ]
         },
         {
           "id": "idoneth-mount-impr-tamborilero-vacio",
@@ -173,13 +196,13 @@
           "ruleText": "Rule text or curated summary entered by the user.",
           "tags": ["mejora-montura", "monstruo", "salvaguarda"],
           "restrictions": [
-            {
-              "type": "custom",
-              "description": "Solo Monstruo. Solo disponible si el héroe tiene una montura de guerra."
-            }
+            { "type": "custom", "description": "Solo Monstruo. Solo disponible si el héroe tiene una montura de guerra." }
           ],
           "needsManualReview": true,
-          "destinyCost": 5
+          "destinyCost": 5,
+          "effects": [
+            { "type": "addWard", "value": "5+" }
+          ]
         },
         {
           "id": "idoneth-mount-impr-mordisco-bivalvo",
@@ -188,13 +211,14 @@
           "ruleText": "MORDISCO BIVALVO: La poderosa criatura cierra sus colosales mandíbulas sobre un monstruo enemigo, intentando inmovilizarlo mientras hace crujir los huesos de su presa.",
           "tags": ["mejora-montura", "monstruo", "acometida"],
           "restrictions": [
-            {
-              "type": "custom",
-              "description": "Solo Monstruo. Solo disponible si el héroe tiene una montura de guerra. No puedes elegir esta mejora si tu héroe tiene otra habilidad Acometida."
-            }
+            { "type": "custom", "description": "Solo Monstruo. Solo disponible si el héroe tiene una montura de guerra. No puedes elegir esta mejora si tu héroe tiene otra habilidad Acometida." }
           ],
           "needsManualReview": true,
-          "destinyCost": 5
+          "destinyCost": 5,
+          "effects": [
+            { "type": "addAbility", "name": "Mordisco Bivalvo" },
+            { "type": "addKeyword", "value": "Acometida" }
+          ]
         }
       ]
     },
@@ -210,7 +234,10 @@
           "tags": ["mejora", "control"],
           "restrictions": [],
           "needsManualReview": false,
-          "destinyCost": 1
+          "destinyCost": 1,
+          "effects": [
+            { "type": "addControl", "value": 1 }
+          ]
         },
         {
           "id": "idoneth-impr-gracia-marcial",
@@ -220,7 +247,10 @@
           "tags": ["mejora", "movimiento"],
           "restrictions": [],
           "needsManualReview": false,
-          "destinyCost": 1
+          "destinyCost": 1,
+          "effects": [
+            { "type": "addMov", "value": 1 }
+          ]
         },
         {
           "id": "idoneth-impr-tenacidad-sombria",
@@ -229,13 +259,13 @@
           "ruleText": "Rule text or curated summary entered by the user.",
           "tags": ["mejora", "salud", "infanteria"],
           "restrictions": [
-            {
-              "type": "custom",
-              "description": "Solo disponible para héroes con la clave Infantería."
-            }
+            { "type": "custom", "description": "Solo disponible para héroes con la clave Infantería." }
           ],
           "needsManualReview": true,
-          "destinyCost": 2
+          "destinyCost": 2,
+          "effects": [
+            { "type": "addHealth", "value": 1 }
+          ]
         },
         {
           "id": "idoneth-impr-corrientes-protectoras",
@@ -245,7 +275,10 @@
           "tags": ["mejora", "salvaguarda"],
           "restrictions": [],
           "needsManualReview": false,
-          "destinyCost": 2
+          "destinyCost": 2,
+          "effects": [
+            { "type": "addWard", "value": "6+" }
+          ]
         },
         {
           "id": "idoneth-impr-espadachin",
@@ -255,7 +288,10 @@
           "tags": ["mejora", "combate", "arma-talasica"],
           "restrictions": [],
           "needsManualReview": false,
-          "destinyCost": 3
+          "destinyCost": 3,
+          "effects": [
+            { "type": "setWeaponHit", "weaponId": "primary", "value": "2+" }
+          ]
         },
         {
           "id": "idoneth-impr-cazador-atento",
@@ -264,13 +300,13 @@
           "ruleText": "Rule text or curated summary entered by the user.",
           "tags": ["mejora", "combate", "arma-talasica", "anti"],
           "restrictions": [
-            {
-              "type": "custom",
-              "description": "El jugador debe elegir a qué clave aplica Anti X al seleccionar esta mejora."
-            }
+            { "type": "custom", "description": "El jugador debe elegir a qué clave aplica Anti X al seleccionar esta mejora." }
           ],
           "needsManualReview": true,
-          "destinyCost": 3
+          "destinyCost": 3,
+          "effects": [
+            { "type": "addAbility", "name": "Arma Talásica: Anti X (+1 Perforar)" }
+          ]
         },
         {
           "id": "idoneth-impr-espada-brillante",
@@ -280,7 +316,10 @@
           "tags": ["mejora", "combate", "arma-talasica", "carga"],
           "restrictions": [],
           "needsManualReview": false,
-          "destinyCost": 4
+          "destinyCost": 4,
+          "effects": [
+            { "type": "addAbility", "name": "Arma Talásica: Carga (+1 Daño)" }
+          ]
         },
         {
           "id": "idoneth-impr-armadura-ornamentada",
@@ -290,7 +329,10 @@
           "tags": ["mejora", "salvacion", "defensa"],
           "restrictions": [],
           "needsManualReview": false,
-          "destinyCost": 4
+          "destinyCost": 4,
+          "effects": [
+            { "type": "setSave", "value": "3+" }
+          ]
         },
         {
           "id": "idoneth-impr-acompanante-abisal",
@@ -299,13 +341,13 @@
           "ruleText": "Rule text or curated summary entered by the user.",
           "tags": ["mejora", "acompañante", "infanteria", "arma"],
           "restrictions": [
-            {
-              "type": "custom",
-              "description": "Solo disponible para héroes con la clave Infantería."
-            }
+            { "type": "custom", "description": "Solo disponible para héroes con la clave Infantería." }
           ],
           "needsManualReview": true,
-          "destinyCost": 1
+          "destinyCost": 1,
+          "effects": [
+            { "type": "addWeapon", "id": "mordisco-abisal", "name": "Mordisco Acompañante Abisal", "atk": 2, "hit": "4+", "wnd": "4+", "rnd": 0, "dmg": 1, "melee": true, "tags": ["Acompañante"] }
+          ]
         },
         {
           "id": "idoneth-impr-miles-de-ataques",
@@ -314,13 +356,13 @@
           "ruleText": "Rule text or curated summary entered by the user.",
           "tags": ["mejora", "acompañante", "ataque"],
           "restrictions": [
-            {
-              "type": "requiresSkillIds",
-              "ids": ["idoneth-impr-acompanante-abisal"]
-            }
+            { "type": "requiresSkillIds", "ids": ["idoneth-impr-acompanante-abisal"] }
           ],
           "needsManualReview": false,
-          "destinyCost": 1
+          "destinyCost": 1,
+          "effects": [
+            { "type": "setWeaponAtk", "weaponId": "mordisco-abisal", "value": 3 }
+          ]
         },
         {
           "id": "idoneth-impr-mordedura-feroz",
@@ -329,13 +371,13 @@
           "ruleText": "Rule text or curated summary entered by the user.",
           "tags": ["mejora", "acompañante", "herir"],
           "restrictions": [
-            {
-              "type": "requiresSkillIds",
-              "ids": ["idoneth-impr-acompanante-abisal"]
-            }
+            { "type": "requiresSkillIds", "ids": ["idoneth-impr-acompanante-abisal"] }
           ],
           "needsManualReview": false,
-          "destinyCost": 1
+          "destinyCost": 1,
+          "effects": [
+            { "type": "setWeaponWnd", "weaponId": "mordisco-abisal", "value": "3+" }
+          ]
         },
         {
           "id": "idoneth-impr-espinas-afiladas",
@@ -344,13 +386,13 @@
           "ruleText": "Rule text or curated summary entered by the user.",
           "tags": ["mejora", "acompañante", "perforar"],
           "restrictions": [
-            {
-              "type": "requiresSkillIds",
-              "ids": ["idoneth-impr-acompanante-abisal"]
-            }
+            { "type": "requiresSkillIds", "ids": ["idoneth-impr-acompanante-abisal"] }
           ],
           "needsManualReview": false,
-          "destinyCost": 1
+          "destinyCost": 1,
+          "effects": [
+            { "type": "setWeaponRnd", "weaponId": "mordisco-abisal", "value": 1 }
+          ]
         },
         {
           "id": "idoneth-impr-oraculo-del-enclave",
@@ -359,13 +401,14 @@
           "ruleText": "Rule text or curated summary entered by the user.",
           "tags": ["mejora", "magia", "isharanno"],
           "restrictions": [
-            {
-              "type": "requiresArchetypeId",
-              "id": "isharanno"
-            }
+            { "type": "requiresArchetypeId", "id": "isharanno" }
           ],
           "needsManualReview": false,
-          "destinyCost": 8
+          "destinyCost": 8,
+          "effects": [
+            { "type": "addKeyword", "value": "Mago" },
+            { "type": "addAbility", "name": "Oráculo del Enclave (Nivel de Poder 2)" }
+          ]
         }
       ]
     }

@@ -15,7 +15,8 @@
       "Bash(node -e \"const a = require\\('./src/data/rules/shared/archetypes.json'\\); a.forEach\\(x => console.log\\(x.id, '-', x.name\\)\\)\")",
       "Bash(node -e \"const fs=require\\('fs'\\); try { JSON.parse\\(fs.readFileSync\\('src/data/rules/factions/idoneth-deepkin/battle-skills.json','utf8'\\)\\); console.log\\('JSON valid'\\); } catch\\(e\\) { console.log\\('JSON error:', e.message\\); }\")",
       "Bash(git init *)",
-      "Bash(git remote *)"
+      "Bash(git remote *)",
+      "Bash(git branch *)"
     ]
   }
 }

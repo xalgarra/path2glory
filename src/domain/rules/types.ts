@@ -66,8 +66,33 @@ export interface Flaw extends RuleEntry {
   destinyCost?: number
 }
 
+// ── Skill effects (applied to compute final warscroll stats) ─────────────────
+
+export type SkillEffect =
+  | { type: 'setMov';         value: number }
+  | { type: 'addMov';         value: number }
+  | { type: 'setHealth';      value: number }
+  | { type: 'addHealth';      value: number }
+  | { type: 'setSave';        value: string }
+  | { type: 'setControl';     value: number }
+  | { type: 'addControl';     value: number }
+  | { type: 'addWard';        value: string }
+  | { type: 'setWeaponAtk';   weaponId: string; value: number }
+  | { type: 'addWeaponAtk';   weaponId: string; value: number }
+  | { type: 'setWeaponHit';   weaponId: string; value: string }
+  | { type: 'setWeaponWnd';   weaponId: string; value: string }
+  | { type: 'setWeaponRnd';   weaponId: string; value: number }
+  | { type: 'addWeaponRnd';   weaponId: string; value: number }
+  | { type: 'setWeaponDmg';   weaponId: string; value: number }
+  | { type: 'addWeaponDmg';   weaponId: string; value: number }
+  | { type: 'addWeapon';      id: string; name: string; atk: number; hit: string; wnd: string; rnd: number; dmg: number; melee?: boolean; rangeInches?: number; tags?: string[] }
+  | { type: 'addKeyword';     value: string }
+  | { type: 'removeKeyword';  value: string }
+  | { type: 'addAbility';     name: string }
+
 export interface BattleSkill extends RuleEntry {
   destinyCost: number
+  effects?: SkillEffect[]
 }
 
 export interface BattleSkillTable {

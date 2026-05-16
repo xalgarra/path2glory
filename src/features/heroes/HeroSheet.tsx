@@ -13,6 +13,7 @@ import { useCampaignStore } from '../campaigns/campaignStore'
 import { navigate } from '../../app/router'
 import type { GrandAlliance, RuleEntry } from '../../domain/rules/types'
 import { parseHeroDescription, downloadWarscrollPng } from './warscrollCanvas'
+import { applySkillEffects } from '../../domain/rules/warscrollEffects'
 import PageContainer from '../../ui/layout/PageContainer'
 import SectionHeader from '../../ui/layout/SectionHeader'
 import Badge from '../../ui/primitives/Badge'
@@ -120,19 +121,28 @@ export default function HeroSheet({ campaignId, heroId }: HeroSheetProps) {
   function handleWarscrollDownload() {
     if (!heroOption || !faction) return
     const parsed = parseHeroDescription(heroOption.description)
-    const keywords = [
-      ...heroOption.tags,
+
+    const baseKeywords = [
+      ...heroOption.tags.map((t) => t.charAt(0).toUpperCase() + t.slice(1)),
       ...(archetype ? [archetype.name] : []),
       faction.name,
     ]
-    const improvements = selectedSkills.filter(Boolean).map((s) => ({
-      name: s!.name,
-      effect: s!.description || s!.ruleText || '',
-    }))
+    const baseState = {
+      mov:      parsed.mov,
+      health:   parsed.health,
+      save:     parsed.save,
+      control:  parsed.control,
+      weapons:  [parsed.primaryWeapon],
+      keywords: baseKeywords,
+      abilities: [] as string[],
+    }
+
+    const finalState = applySkillEffects(baseState, selectedSkills.filter(Boolean) as NonNullable<typeof selectedSkills[0]>[])
+
     const heroName = hero?.name || heroOption.name
     downloadWarscrollPng(
-      { heroName, heroTypeName: heroOption.name, factionName: faction.name, ...parsed, improvements, keywords },
-      heroName,
+      { heroName, heroTypeName: heroOption.name, factionName: faction.name },
+      finalState,
     )
   }
 

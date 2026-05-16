@@ -68,8 +68,32 @@ export const heroOptionsSchema = z.array(heroOptionSchema)
 
 // ── Battle skills ─────────────────────────────────────────────────────────────
 
+const skillEffectSchema = z.discriminatedUnion('type', [
+  z.object({ type: z.literal('setMov'),        value: z.number() }),
+  z.object({ type: z.literal('addMov'),        value: z.number() }),
+  z.object({ type: z.literal('setHealth'),     value: z.number() }),
+  z.object({ type: z.literal('addHealth'),     value: z.number() }),
+  z.object({ type: z.literal('setSave'),       value: z.string() }),
+  z.object({ type: z.literal('setControl'),    value: z.number() }),
+  z.object({ type: z.literal('addControl'),    value: z.number() }),
+  z.object({ type: z.literal('addWard'),       value: z.string() }),
+  z.object({ type: z.literal('setWeaponAtk'),  weaponId: z.string(), value: z.number() }),
+  z.object({ type: z.literal('addWeaponAtk'),  weaponId: z.string(), value: z.number() }),
+  z.object({ type: z.literal('setWeaponHit'),  weaponId: z.string(), value: z.string() }),
+  z.object({ type: z.literal('setWeaponWnd'),  weaponId: z.string(), value: z.string() }),
+  z.object({ type: z.literal('setWeaponRnd'),  weaponId: z.string(), value: z.number() }),
+  z.object({ type: z.literal('addWeaponRnd'),  weaponId: z.string(), value: z.number() }),
+  z.object({ type: z.literal('setWeaponDmg'),  weaponId: z.string(), value: z.number() }),
+  z.object({ type: z.literal('addWeaponDmg'),  weaponId: z.string(), value: z.number() }),
+  z.object({ type: z.literal('addWeapon'),     id: z.string(), name: z.string(), atk: z.number(), hit: z.string(), wnd: z.string(), rnd: z.number(), dmg: z.number(), melee: z.boolean().optional(), rangeInches: z.number().optional(), tags: z.array(z.string()).optional() }),
+  z.object({ type: z.literal('addKeyword'),    value: z.string() }),
+  z.object({ type: z.literal('removeKeyword'), value: z.string() }),
+  z.object({ type: z.literal('addAbility'),    name: z.string() }),
+])
+
 export const battleSkillSchema = ruleEntrySchema.extend({
   destinyCost: z.number().int(),
+  effects: z.array(skillEffectSchema).optional(),
 })
 
 export const battleSkillTableSchema = z.object({
