@@ -12,6 +12,7 @@ import { validateHero } from '../../domain/hero/heroValidator'
 import { useCampaignStore } from '../campaigns/campaignStore'
 import { navigate } from '../../app/router'
 import type { GrandAlliance, RuleEntry } from '../../domain/rules/types'
+import { parseHeroDescription, downloadWarscrollPng } from './warscrollCanvas'
 import PageContainer from '../../ui/layout/PageContainer'
 import SectionHeader from '../../ui/layout/SectionHeader'
 import Badge from '../../ui/primitives/Badge'
@@ -116,6 +117,25 @@ export default function HeroSheet({ campaignId, heroId }: HeroSheetProps) {
   const errors = validation.violations.filter((v) => v.code !== 'MANUAL_REVIEW_PENDING')
   const budgetExceeded = errors.some((e) => e.code === 'DESTINY_BUDGET_EXCEEDED')
 
+  function handleWarscrollDownload() {
+    if (!heroOption || !faction) return
+    const parsed = parseHeroDescription(heroOption.description)
+    const keywords = [
+      ...heroOption.tags,
+      ...(archetype ? [archetype.name] : []),
+      faction.name,
+    ]
+    const improvements = selectedSkills.filter(Boolean).map((s) => ({
+      name: s!.name,
+      effect: s!.description || s!.ruleText || '',
+    }))
+    const heroName = hero?.name || heroOption.name
+    downloadWarscrollPng(
+      { heroName, heroTypeName: heroOption.name, factionName: faction.name, ...parsed, improvements, keywords },
+      heroName,
+    )
+  }
+
   return (
     <PageContainer>
       <div className="pt-6 space-y-6">
@@ -126,12 +146,20 @@ export default function HeroSheet({ campaignId, heroId }: HeroSheetProps) {
           >
             ‹ {campaign.name}
           </button>
-          <button
-            onClick={() => window.print()}
-            className="text-slate-400 hover:text-slate-300 text-sm min-h-[44px] pl-4"
-          >
-            Imprimir / PDF
-          </button>
+          <div className="flex gap-3">
+            <button
+              onClick={handleWarscrollDownload}
+              className="text-sky-400 hover:text-sky-300 text-sm min-h-[44px]"
+            >
+              Warscroll PNG
+            </button>
+            <button
+              onClick={() => window.print()}
+              className="text-slate-400 hover:text-slate-300 text-sm min-h-[44px] pl-2"
+            >
+              Imprimir
+            </button>
+          </div>
         </div>
 
         {hasVersionDrift && (
