@@ -1,0 +1,42 @@
+[
+  {
+    "id": "idoneth-linaje-real",
+    "name": "Linaje Real",
+    "description": "Este guerrero puede seguir su linaje hasta el primero de los Cythai, y en la batalla inspira a sus aliados a grandes hazañas de valentía.",
+    "ruleText": "Pasiva. Efecto: Suma 1 a la puntuación de control de las unidades Profundos Idoneth amigas completamente a 12\" o menos de esta unidad.",
+    "tags": ["origen", "control"],
+    "restrictions": [],
+    "needsManualReview": false,
+    "destinyCost": 1
+  },
+  {
+    "id": "idoneth-prodigio-del-asydrazor",
+    "name": "Prodigio del Asydrazor",
+    "description": "Tras completar su entrenamiento militar, este guerrero ha demostrado ser un verdadero maestro espadachín.",
+    "ruleText": "Pasiva. Efecto: Si esta unidad es Akheliano, suma al atributo Ataques de su arma talásica un número igual a la cantidad de rangos que esta unidad ha ganado en su Sendero. (Ejemplo: rango Legendaria = suma 4 al atributo Ataques.)",
+    "tags": ["origen", "combate", "akheliano"],
+    "restrictions": [],
+    "needsManualReview": false,
+    "destinyCost": 2
+  },
+  {
+    "id": "idoneth-veloz-como-la-gran-corriente",
+    "name": "Veloz como la Gran Corriente",
+    "description": "Este guerrero se mueve con tal fluidez que siempre da el primer golpe en la batalla.",
+    "ruleText": "Cualquier fase de combate. Efecto: Tira 1D6. Suma 2 al resultado si esta unidad es Infantería. Con 4+, esta unidad tiene Atacar primero durante el resto del turno.",
+    "tags": ["origen", "combate", "atacar-primero"],
+    "restrictions": [],
+    "needsManualReview": false,
+    "destinyCost": 4
+  },
+  {
+    "id": "idoneth-prodigio-de-los-turscoll",
+    "name": "Prodigio de los Túrscoll",
+    "description": "Educado desde muy joven en las artes mágicas de los Idoneth, este guerrero es un potente portador del poder del mar aetérico.",
+    "ruleText": "Una vez por batalla, Reacción: Declaraste una habilidad Hechizo para esta unidad. Efecto: Si esta unidad es Isharanno, repite 1 de los dados en la tirada de lanzamiento.",
+    "tags": ["origen", "magia", "isharanno", "hechizo"],
+    "restrictions": [],
+    "needsManualReview": false,
+    "destinyCost": 2
+  }
+]

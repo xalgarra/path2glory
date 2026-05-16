@@ -1,0 +1,29 @@
+[
+  {
+    "id": "flaw-arrogant",
+    "name": "Arrogant [PLACEHOLDER - not verified]",
+    "description": "This hero's pride often gets in the way.",
+    "ruleText": "Rule text or curated summary entered by the user.",
+    "tags": [],
+    "restrictions": [],
+    "needsManualReview": false
+  },
+  {
+    "id": "flaw-reckless",
+    "name": "Reckless [PLACEHOLDER - not verified]",
+    "description": "This hero charges headlong into danger.",
+    "ruleText": "Rule text or curated summary entered by the user.",
+    "tags": [],
+    "restrictions": [],
+    "needsManualReview": false
+  },
+  {
+    "id": "flaw-haunted",
+    "name": "Haunted [PLACEHOLDER - not verified]",
+    "description": "This hero is plagued by dark memories or spirits.",
+    "ruleText": "Rule text or curated summary entered by the user.",
+    "tags": [],
+    "restrictions": [],
+    "needsManualReview": true
+  }
+]

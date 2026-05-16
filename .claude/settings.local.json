@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm init *)",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173)",
+      "Bash(kill %1)",
+      "Bash(node -e ' *)",
+      "PowerShell(Rename-Item -Path \"c:\\\\Users\\\\Usuario\\\\prog\\\\path to glory\" -NewName \"path-to-glory\")",
+      "Read(//c/Users/Usuario/prog/**)",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(node -e \"const p = require\\('./package.json'\\); console.log\\(JSON.stringify\\(p.dependencies, null, 2\\)\\); console.log\\(JSON.stringify\\(p.devDependencies, null, 2\\)\\)\")",
+      "Bash(node -e \"const pkg = require\\('./node_modules/vite-plugin-pwa/package.json'\\); console.log\\('version:', pkg.version\\); console.log\\('exports keys:', Object.keys\\(pkg.exports || {}\\)\\)\")",
+      "Bash(node -e \"const pkg = require\\('./node_modules/vite-plugin-pwa/package.json'\\); console.log\\(JSON.stringify\\(pkg.exports['./react'], null, 2\\)\\)\")",
+      "Bash(node -e \"const a = require\\('./src/data/rules/shared/archetypes.json'\\); a.forEach\\(x => console.log\\(x.id, '-', x.name\\)\\)\")",
+      "Bash(node -e \"const fs=require\\('fs'\\); try { JSON.parse\\(fs.readFileSync\\('src/data/rules/factions/idoneth-deepkin/battle-skills.json','utf8'\\)\\); console.log\\('JSON valid'\\); } catch\\(e\\) { console.log\\('JSON error:', e.message\\); }\")",
+      "Bash(git init *)",
+      "Bash(git remote *)"
+    ]
+  }
+}

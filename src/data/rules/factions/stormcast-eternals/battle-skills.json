@@ -1,0 +1,87 @@
+{
+  "tables": [
+    {
+      "id": "stormcast-skills-warrior",
+      "name": "Warrior Battle Skills [PLACEHOLDER - not verified]",
+      "skills": [
+        {
+          "id": "stormcast-skill-basic",
+          "name": "Basic Warrior Skill [PLACEHOLDER - not verified]",
+          "description": "A basic placeholder battle skill for Stormcast warriors.",
+          "ruleText": "Rule text or curated summary entered by the user.",
+          "tags": ["melee"],
+          "restrictions": [],
+          "needsManualReview": false,
+          "destinyCost": 1
+        },
+        {
+          "id": "stormcast-skill-advanced",
+          "name": "Advanced Warrior Skill [PLACEHOLDER - not verified]",
+          "description": "A placeholder skill available from level 2.",
+          "ruleText": "Rule text or curated summary entered by the user.",
+          "tags": ["melee"],
+          "restrictions": [
+            { "type": "minLevel", "value": 2 }
+          ],
+          "needsManualReview": false,
+          "destinyCost": 2
+        },
+        {
+          "id": "stormcast-skill-combo",
+          "name": "Combo Skill [PLACEHOLDER - not verified]",
+          "description": "A placeholder skill that requires the basic warrior skill.",
+          "ruleText": "Rule text or curated summary entered by the user.",
+          "tags": ["melee"],
+          "restrictions": [
+            { "type": "requiresSkillIds", "ids": ["stormcast-skill-basic"] }
+          ],
+          "needsManualReview": false,
+          "destinyCost": 2
+        },
+        {
+          "id": "stormcast-skill-narrative",
+          "name": "Narrative Skill [PLACEHOLDER - not verified]",
+          "description": "A placeholder skill with campaign context requiring manual review.",
+          "ruleText": "Rule text or curated summary entered by the user.",
+          "tags": ["narrative"],
+          "restrictions": [
+            {
+              "type": "custom",
+              "description": "This skill's effect depends on a special campaign event. The player must verify eligibility with their campaign group."
+            }
+          ],
+          "needsManualReview": true,
+          "destinyCost": 2
+        }
+      ]
+    },
+    {
+      "id": "stormcast-skills-ranged",
+      "name": "Ranged Battle Skills [PLACEHOLDER - not verified]",
+      "skills": [
+        {
+          "id": "stormcast-skill-ranged-basic",
+          "name": "Basic Ranged Skill [PLACEHOLDER - not verified]",
+          "description": "A basic placeholder ranged battle skill.",
+          "ruleText": "Rule text or curated summary entered by the user.",
+          "tags": ["ranged"],
+          "restrictions": [],
+          "needsManualReview": false,
+          "destinyCost": 1
+        },
+        {
+          "id": "stormcast-skill-ranged-exclusive",
+          "name": "Exclusive Ranged Skill [PLACEHOLDER - not verified]",
+          "description": "A placeholder ranged skill that cannot be taken with the basic ranged skill.",
+          "ruleText": "Rule text or curated summary entered by the user.",
+          "tags": ["ranged"],
+          "restrictions": [
+            { "type": "excludesSkillIds", "ids": ["stormcast-skill-ranged-basic"] }
+          ],
+          "needsManualReview": false,
+          "destinyCost": 2
+        }
+      ]
+    }
+  ]
+}

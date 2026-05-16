@@ -1,0 +1,42 @@
+[
+  {
+    "id": "idoneth-legado-de-slaanesh",
+    "name": "Legado de Slaanesh",
+    "description": "Una corrupción persistente deja cicatrices en el alma de este guerrero. Es una agonía interminable que debe soportar.",
+    "ruleText": "Final de cualquier turno. Declara: Esta unidad debe usar esta habilidad al final de cada turno. Efecto: Tira 1D6. Con 4+, asigna 1 daño a esta unidad (no pueden hacerse tiradas de salvaguarda contra ese daño).",
+    "tags": ["defecto", "daño"],
+    "restrictions": [],
+    "needsManualReview": false,
+    "destinyCost": -4
+  },
+  {
+    "id": "idoneth-orgullo-y-arrogancia",
+    "name": "Orgullo y Arrogancia",
+    "description": "Este guerrero busca a los campeones más formidables del enemigo, perdiéndose en el fragor de la batalla.",
+    "ruleText": "Pasiva. Efecto: Mientras esta unidad esté trabada con algún Héroe enemigo, todos sus ataques deben tomar como blanco un Héroe enemigo.",
+    "tags": ["defecto", "combate"],
+    "restrictions": [],
+    "needsManualReview": false,
+    "destinyCost": -2
+  },
+  {
+    "id": "idoneth-excesivamente-cauteloso",
+    "name": "Excesivamente Cauteloso",
+    "description": "Con el escudo levantado, este guerrero se protege de los ataques, incluso cuando atacar sería la mejor opción.",
+    "ruleText": "Pasiva. Efecto: Cada vez que esta unidad sea tomada como blanco de un ataque, si tienes puntos de mando y alguna unidad amiga no ha usado aún la orden \"Defensa total\", esa unidad debe usar la orden \"Defensa total\".",
+    "tags": ["defecto", "defensa"],
+    "restrictions": [],
+    "needsManualReview": false,
+    "destinyCost": -2
+  },
+  {
+    "id": "idoneth-solitario",
+    "name": "Solitario",
+    "description": "Un ser aislado, este guerrero prefiere evitar la compañía de los suyos.",
+    "ruleText": "Pasiva. Efecto: Esta unidad no puede situarse a 9\" o menos de unidades amigas. Además, las unidades amigas no pueden situarse a 9\" de esta unidad.",
+    "tags": ["defecto", "posicionamiento"],
+    "restrictions": [],
+    "needsManualReview": false,
+    "destinyCost": -4
+  }
+]

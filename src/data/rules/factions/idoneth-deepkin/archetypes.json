@@ -1,0 +1,22 @@
+[
+  {
+    "id": "akheliano",
+    "name": "Akheliano",
+    "description": "Guerrero de combate cuerpo a cuerpo de los Idoneth Deepkin.",
+    "ruleText": "Obtiene la clave Akheliano y las opciones de regimiento: Cualquier unidad Profundos Idoneth. Además, cambia los atributos del Arma talásica: 5 Ataques, 3+ para impactar, 4+ para herir, 1 Herida Mortal, 2 Daño.",
+    "tags": ["combate", "akheliano"],
+    "restrictions": [],
+    "needsManualReview": false,
+    "destinyCost": 0
+  },
+  {
+    "id": "isharanno",
+    "name": "Isharanno",
+    "description": "Especialista en magia de los Idoneth Deepkin, obtiene las claves Isharanno y Mago (1).",
+    "ruleText": "Obtiene las claves Isharanno y Mago (1), y las opciones de regimiento: Cualquier unidad Profundos Idoneth.",
+    "tags": ["magia", "isharanno", "mago"],
+    "restrictions": [],
+    "needsManualReview": false,
+    "destinyCost": 3
+  }
+]

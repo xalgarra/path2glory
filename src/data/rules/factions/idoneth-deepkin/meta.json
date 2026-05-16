@@ -1,0 +1,6 @@
+{
+  "factionId": "idoneth-deepkin",
+  "factionRulesVersion": "2026-05-idoneth-v1",
+  "factionRulesUpdatedAt": "2026-05-10",
+  "factionRulesNotes": "Initial proof of concept version. Hero and skill data are placeholders — verify against source material before use."
+}

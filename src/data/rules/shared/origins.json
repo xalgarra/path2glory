@@ -1,0 +1,29 @@
+[
+  {
+    "id": "origin-noble",
+    "name": "Noble Birth [PLACEHOLDER - not verified]",
+    "description": "A hero of noble lineage.",
+    "ruleText": "Rule text or curated summary entered by the user.",
+    "tags": [],
+    "restrictions": [],
+    "needsManualReview": false
+  },
+  {
+    "id": "origin-veteran",
+    "name": "Veteran Warrior [PLACEHOLDER - not verified]",
+    "description": "A hero forged through long years of battle.",
+    "ruleText": "Rule text or curated summary entered by the user.",
+    "tags": [],
+    "restrictions": [],
+    "needsManualReview": false
+  },
+  {
+    "id": "origin-mysterious",
+    "name": "Mysterious Past [PLACEHOLDER - not verified]",
+    "description": "A hero whose origins are shrouded in mystery.",
+    "ruleText": "Rule text or curated summary entered by the user.",
+    "tags": [],
+    "restrictions": [],
+    "needsManualReview": true
+  }
+]

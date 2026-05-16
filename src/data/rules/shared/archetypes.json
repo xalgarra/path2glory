@@ -1,0 +1,29 @@
+[
+  {
+    "id": "champion",
+    "name": "Champion [PLACEHOLDER - not verified]",
+    "description": "An archetype focused on direct combat prowess.",
+    "ruleText": "Rule text or curated summary entered by the user.",
+    "tags": ["melee", "starter"],
+    "restrictions": [],
+    "needsManualReview": false
+  },
+  {
+    "id": "conqueror",
+    "name": "Conqueror [PLACEHOLDER - not verified]",
+    "description": "An archetype focused on territory and leadership.",
+    "ruleText": "Rule text or curated summary entered by the user.",
+    "tags": ["leadership"],
+    "restrictions": [],
+    "needsManualReview": false
+  },
+  {
+    "id": "slayer",
+    "name": "Slayer [PLACEHOLDER - not verified]",
+    "description": "An archetype focused on hunting dangerous enemies.",
+    "ruleText": "Rule text or curated summary entered by the user.",
+    "tags": ["aggressive"],
+    "restrictions": [],
+    "needsManualReview": false
+  }
+]

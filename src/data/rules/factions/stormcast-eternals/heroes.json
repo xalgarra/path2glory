@@ -1,0 +1,36 @@
+[
+  {
+    "id": "stormcast-hero-alpha",
+    "name": "Hero Type Alpha [PLACEHOLDER - not verified]",
+    "description": "A placeholder warrior-type hero for the Stormcast Eternals.",
+    "ruleText": "Rule text or curated summary entered by the user.",
+    "tags": ["melee", "warrior"],
+    "restrictions": [],
+    "needsManualReview": false,
+    "baseDestinyCost": 4,
+    "allowedArchetypeIds": ["champion", "conqueror", "slayer"],
+    "allowedBattleSkillTableIds": ["stormcast-skills-warrior"],
+    "destinyBudgetByLevel": {
+      "1": 6,
+      "2": 8,
+      "3": 10
+    }
+  },
+  {
+    "id": "stormcast-hero-beta",
+    "name": "Hero Type Beta [PLACEHOLDER - not verified]",
+    "description": "A placeholder ranged-type hero for the Stormcast Eternals.",
+    "ruleText": "Rule text or curated summary entered by the user.",
+    "tags": ["ranged"],
+    "restrictions": [],
+    "needsManualReview": false,
+    "baseDestinyCost": 5,
+    "allowedArchetypeIds": ["champion", "slayer"],
+    "allowedBattleSkillTableIds": ["stormcast-skills-warrior", "stormcast-skills-ranged"],
+    "destinyBudgetByLevel": {
+      "1": 6,
+      "2": 8,
+      "3": 10
+    }
+  }
+]

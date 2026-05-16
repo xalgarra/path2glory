@@ -1,0 +1,62 @@
+[
+  {
+    "id": "joven-noble",
+    "name": "Joven Noble",
+    "description": "Héroe emergente de los Profundos Idoneth. Mov 6\", Salud 5, Salvación 5+, Control 2. Arma talásica: 3 Ataques, 3+ impactar, 4+ herir, 1 HM, 2 Daño. Claves: Héroe Infantería Orden Profundos Idoneth Aelfo.",
+    "ruleText": "Presupuesto de 10 PD para gastar en los pasos 3–8 de creación del héroe.",
+    "tags": ["heroe", "idoneth"],
+    "restrictions": [],
+    "needsManualReview": false,
+    "baseDestinyCost": 0,
+    "allowedArchetypeIds": ["akheliano", "isharanno"],
+    "allowedBattleSkillTableIds": [
+      "idoneth-companions",
+      "idoneth-war-mounts",
+      "idoneth-war-mount-improvements",
+      "idoneth-other-improvements"
+    ],
+    "destinyBudgetByLevel": {
+      "1": 10
+    }
+  },
+  {
+    "id": "senor-del-enclave",
+    "name": "Señor del Enclave",
+    "description": "Héroe veterano de los Profundos Idoneth. Mov 6\", Salud 5, Salvación 5+, Control 2. Arma talásica: 3 Ataques, 3+ impactar, 4+ herir, 1 HM, 2 Daño. Claves: Héroe Infantería Orden Profundos Idoneth Aelfo.",
+    "ruleText": "Presupuesto de 30 PD para gastar en los pasos 3–8 de creación del héroe.",
+    "tags": ["heroe", "idoneth"],
+    "restrictions": [],
+    "needsManualReview": false,
+    "baseDestinyCost": 0,
+    "allowedArchetypeIds": ["akheliano", "isharanno"],
+    "allowedBattleSkillTableIds": [
+      "idoneth-companions",
+      "idoneth-war-mounts",
+      "idoneth-war-mount-improvements",
+      "idoneth-other-improvements"
+    ],
+    "destinyBudgetByLevel": {
+      "1": 30
+    }
+  },
+  {
+    "id": "regente-del-mar-etereo",
+    "name": "Regente del Mar Etéreo",
+    "description": "Héroe de élite de los Profundos Idoneth. Mov 6\", Salud 5, Salvación 5+, Control 2. Arma talásica: 3 Ataques, 3+ impactar, 4+ herir, 1 HM, 2 Daño. Claves: Héroe Infantería Orden Profundos Idoneth Aelfo.",
+    "ruleText": "Presupuesto de 50 PD para gastar en los pasos 3–8 de creación del héroe.",
+    "tags": ["heroe", "idoneth"],
+    "restrictions": [],
+    "needsManualReview": false,
+    "baseDestinyCost": 0,
+    "allowedArchetypeIds": ["akheliano", "isharanno"],
+    "allowedBattleSkillTableIds": [
+      "idoneth-companions",
+      "idoneth-war-mounts",
+      "idoneth-war-mount-improvements",
+      "idoneth-other-improvements"
+    ],
+    "destinyBudgetByLevel": {
+      "1": 50
+    }
+  }
+]
