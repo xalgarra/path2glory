@@ -11,8 +11,8 @@ const heroSchema = z.object({
   factionRulesVersionAtCreation: z.string(),
   heroOptionId: z.string(),
   archetypeId: z.string(),
-  originId: z.string(),
-  flawId: z.string(),
+  originId: z.string().nullable(),
+  flawId: z.string().nullable(),
   level: z.number().int().positive(),
   battleSkillIds: z.array(z.string()),
   notes: z.string().optional(),
@@ -75,13 +75,5 @@ export function downloadBackup(envelope: UserDataEnvelope): void {
   const blob = new Blob([json], { type: 'application/json' })
   const date = new Date().toISOString().slice(0, 10)
   const filename = `path-to-glory-backup-${date}.json`
-
-  if (typeof navigator.share === 'function') {
-    const file = new File([blob], filename, { type: 'application/json' })
-    navigator.share({ files: [file], title: 'Path to Glory Backup' }).catch(() => {
-      triggerDownload(blob, filename)
-    })
-  } else {
-    triggerDownload(blob, filename)
-  }
+  triggerDownload(blob, filename)
 }
